@@ -1,0 +1,26 @@
+{
+    "name": "ZMK Development",
+    "dockerFile": "Dockerfile",
+    "runArgs": ["--security-opt", "label=disable"],
+    // "updateContentCommand": "cd /workspaces/zmk && git fetch --depth=1 && git checkout HEAD",
+    "containerEnv": {
+          "PROMPT_COMMAND": "history -a"
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-vscode.cpptools",
+          "spadin.zmk-tools"
+        ], 
+        "settings": {
+          "terminal.integrated.shell.linux": "/bin/bash"
+        }
+      }
+    },
+    // "features": {
+    //   "ghcr.io/devcontainers/features/common-utils:2": {
+    //     "version": "latest"
+    //   }
+    // }
+  }
+  
