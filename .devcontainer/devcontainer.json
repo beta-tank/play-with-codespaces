@@ -1,12 +1,17 @@
 {
     "name": "ZMK Development",
-    "dockerFile": "Dockerfile",
+    "build": {
+      "dockerfile": "Dockerfile",
+      "args": {
+        "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+        "ANOTHER": "one"
+      }
+    },
     "runArgs": ["--security-opt", "label=disable"],
-    "workspaceFolder": "/workspace",
+    "workspaceFolder": "",
     // "updateContentCommand": "cd /workspaces/zmk && git fetch --depth=1 && git checkout HEAD",
     "containerEnv": {
-          "PROMPT_COMMAND": "history -a",
-          "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+          "PROMPT_COMMAND": "history -a"
     },
     "customizations": {
       "vscode": {
